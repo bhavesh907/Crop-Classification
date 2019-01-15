@@ -1,0 +1,12 @@
+Please follow below steps to install gdal successfully
+
+Step1 :- https://github.com/conda-forge/gdal-feedstock
+
+Step 2:-
+conda info -e
+
+Step3 :- 
+source activate base
+
+Step4 :-
+python -m ipykernel install --user --name base --display-name "Python Gdal"
