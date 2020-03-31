@@ -20,4 +20,7 @@ You can download the dataset used in this repo from [kaggle](https://www.kaggle.
 
 The dataset consist of 10 RapidEye satellite images provided by the [planet.com](https://www.planet.com/) and 1 USDA Cropland data layer which provides the pixel level crop labels. 
 
-
+# Usage
+1. Run the data-preprocessing.ipynb to prepare the dataset for our models.
+2. To classify the crops based on NDVI index, run NDVI_based.ipynb
+3. Train the DL model using the script Crop_classification_DL_model.ipynb
