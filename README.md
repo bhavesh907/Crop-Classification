@@ -4,6 +4,8 @@ This repo provides codes for crop classification using multi temporal satellite 
 
 There are many classical machine learning crop classification approaches available which use mono-temporal images and use the spectral and textural properties of a crop which results in relatively low accuracy but we’ll use the method suggested by **Rose M. Rustowicz** author of the [paper](http://cs229.stanford.edu/proj2017/final-reports/5243811.pdf)
 
+![alt text](https://github.com/bhavesh907/Crop-Classification/cover.png "cover")
+
 # Installation
 
 ```
