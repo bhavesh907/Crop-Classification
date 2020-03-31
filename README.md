@@ -4,7 +4,7 @@ This repo provides codes for http://cs229.stanford.edu/proj2017/final-reports/52
 
 # Installation
 
-'''conda create -n geo_py37 python=3.7'''
+`conda create -n geo_py37 python=3.7`
 
 You can download the dataset used in this repo from https://www.kaggle.com/bhavesh907/crop-classificationcs2292017usgscroplanddata
 
