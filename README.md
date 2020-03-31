@@ -4,7 +4,7 @@ This repo provides codes for http://cs229.stanford.edu/proj2017/final-reports/52
 
 # Installation
 
-```conda create --name geo_py37 python=3.7```
+```conda create --name geo_py37 python=3.7 \n```
 ```conda install gdal rasterio``` 
 ```conda install numpy pandas geopandas scikit-learn jupyterlab matplotlib seaborn xarray rasterstats tqdm pytest sqlalchemy scikit-image scipy pysal beautifulsoup4 boto3 cython statsmodels future graphviz pylint line_profiler nodejs sphinx```
 
