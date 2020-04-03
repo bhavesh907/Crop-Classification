@@ -4,7 +4,7 @@ This repo provides codes for crop classification using multi temporal satellite 
 
 There are many classical machine learning crop classification approaches available which use mono-temporal images and use the spectral and textural properties of a crop which results in relatively low accuracy but we’ll use the method suggested by **Rose M. Rustowicz** author of the [paper](http://cs229.stanford.edu/proj2017/final-reports/5243811.pdf)
 
-![alt text](https://github.com/bhavesh907/Crop-Classification/blob/master/cover.png "cover")
+![alt text](https://github.com/bhavesh907/Crop-Classification/blob/master/cover1.png "cover")
 
 # Installation
 
@@ -18,7 +18,7 @@ conda install numpy pandas geopandas scikit-learn jupyterlab matplotlib seaborn 
 # Dataset
 You can download the dataset used in this repo from [kaggle](https://www.kaggle.com/bhavesh907/crop-classificationcs2292017usgscroplanddata)
 
-The dataset consist of 10 RapidEye satellite images provided by the [planet.com](https://www.planet.com/) and 1 USDA Cropland data layer which provides the pixel level crop labels. 
+The dataset consists of 10 RapidEye satellite images provided by the [planet.com](https://www.planet.com/) and 1 USDA Cropland data layer which provides the pixel level crop labels. 
 
 # Usage
 1. Run the data-preprocessing.ipynb to prepare the dataset for our models.
