@@ -16,7 +16,7 @@ conda install numpy pandas geopandas scikit-learn jupyterlab matplotlib seaborn 
 ```
 
 # Dataset
-You can download the dataset used in this repo from [kaggle](https://www.kaggle.com/bhavesh907/crop-classificationcs2292017usgscroplanddata)
+You can download the dataset used in this repo from [Gdrive](https://drive.google.com/drive/folders/1go32yGsEoLkYQi48qVQoG7shDuTgfjf4?usp=sharing)
 
 The dataset consists of 10 RapidEye satellite images provided by the [planet.com](https://www.planet.com/) and 1 USDA Cropland data layer which provides the pixel level crop labels. 
 
