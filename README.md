@@ -39,8 +39,19 @@ Classical single-image approaches use spectral and textural properties and strug
 | 121 | Developed / Open Space |
 | 225 | Dbl Crop WinWht/Corn |
 
-**Download:** [Google Drive](https://drive.google.com/drive/folders/1go32yGsEoLkYQi48qVQoG7shDuTgfjf4?usp=sharing)  
-Place all `.tiff` files inside the `Dataset/` directory.
+**Download via Kaggle (recommended):**
+
+```bash
+# Install the Kaggle CLI if you haven't already
+pip install kaggle
+
+# Download and unzip into the Dataset/ directory
+kaggle datasets download -d bhavesh907/crop-classificationcs2292017usgscroplanddata
+unzip crop-classificationcs2292017usgscroplanddata.zip -d Dataset/
+```
+
+You need a Kaggle account and your `~/.kaggle/kaggle.json` API token in place.  
+See the [Kaggle API docs](https://www.kaggle.com/docs/api) for setup instructions.
 
 ---
 

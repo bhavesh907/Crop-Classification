@@ -1,1 +1,22 @@
-Download dataset using command "kaggle datasets download -d bhavesh907/crop-classificationcs2292017usgscroplanddata"
+Download the dataset from Kaggle:
+
+  kaggle datasets download -d bhavesh907/crop-classificationcs2292017usgscroplanddata
+  unzip crop-classificationcs2292017usgscroplanddata.zip -d Dataset/
+
+Requirements:
+  - Kaggle account: https://www.kaggle.com
+  - API token at ~/.kaggle/kaggle.json (download from Account > API > Create Token)
+  - Kaggle CLI: pip install kaggle
+
+After unzipping, Dataset/ should contain:
+  cdl2017.tiff        (USDA Cropland Data Layer — ground-truth labels)
+  20170306.tiff
+  20170410.tiff
+  20170601.tiff
+  20170615.tiff
+  20170708.tiff
+  20170807.tiff
+  20170905.tiff
+  20170923.tiff
+  20171015.tiff
+  20171207.tiff
