@@ -1,22 +1,36 @@
-Download the dataset from Kaggle:
+The dataset is assembled from two public sources. Download each separately.
 
-  kaggle datasets download -d bhavesh907/crop-classificationcs2292017usgscroplanddata
-  unzip crop-classificationcs2292017usgscroplanddata.zip -d Dataset/
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Satellite imagery — Planet RapidEye (10 scenes, 2017)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Apply for free research access:
+  https://www.planet.com/markets/education-and-research/
 
-Requirements:
-  - Kaggle account: https://www.kaggle.com
-  - API token at ~/.kaggle/kaggle.json (download from Account > API > Create Token)
-  - Kaggle CLI: pip install kaggle
+Then download RapidEye scenes for your area of interest via:
+  - Planet Explorer (web): https://www.planet.com/explorer/
+  - Planet Python SDK:     https://github.com/planetlabs/planet-client-python
 
-After unzipping, Dataset/ should contain:
-  cdl2017.tiff        (USDA Cropland Data Layer — ground-truth labels)
-  20170306.tiff
-  20170410.tiff
-  20170601.tiff
-  20170615.tiff
-  20170708.tiff
-  20170807.tiff
-  20170905.tiff
-  20170923.tiff
-  20171015.tiff
-  20171207.tiff
+Dates needed:
+  20170306, 20170410, 20170601, 20170615, 20170708,
+  20170807, 20170905, 20170923, 20171015, 20171207
+
+Save each scene as:  Dataset/YYYYMMDD.tiff
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. Ground-truth labels — USDA CDL 2017
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Free download from USDA NASS CropScape:
+  https://nassgeodata.gmu.edu/CropScape/
+
+Select year 2017, draw/upload your bounding box matching the
+satellite imagery extent, and export as GeoTIFF.
+
+Save as: Dataset/cdl2017.tiff
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Note
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Both the CDL raster and all satellite scenes must share the same
+spatial extent and CRS. Use gdalwarp to reproject/clip if needed:
+
+  gdalwarp -t_srs EPSG:4326 -te <xmin> <ymin> <xmax> <ymax> input.tiff output.tiff

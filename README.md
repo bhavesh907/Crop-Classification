@@ -14,10 +14,16 @@ Classical single-image approaches use spectral and textural properties and strug
 
 ## Dataset
 
-10 RapidEye images (5 spectral bands each: Blue, Green, Red, Red-Edge, NIR) acquired throughout the 2017 growing season, paired with the USDA Cropland Data Layer (CDL) as pixel-level ground truth.
+The dataset is not redistributed in this repository. It was assembled from two
+publicly accessible sources, described below, so you can recreate it yourself.
 
-| Date | Approximate Stage |
-|------|-------------------|
+### 1 — Satellite imagery (Planet RapidEye)
+
+10 RapidEye scenes covering a single tile in California's Central Valley,
+acquired at roughly monthly intervals across the 2017 growing season:
+
+| Date | Approximate phenological stage |
+|------|-------------------------------|
 | 2017-03-06 | Early spring |
 | 2017-04-10 | Green-up |
 | 2017-06-01 | Early summer |
@@ -29,29 +35,56 @@ Classical single-image approaches use spectral and textural properties and strug
 | 2017-10-15 | Post-harvest |
 | 2017-12-07 | Winter dormancy |
 
-**Target classes** (USDA CDL codes):
+Each scene has 5 bands at 5 m resolution: **Blue, Green, Red, Red-Edge, NIR**.
 
-| Code | Crop |
-|------|------|
+**How to get the imagery:**
+Planet offers free access to researchers and students through their
+[Education & Research Program](https://www.planet.com/markets/education-and-research/).
+Once approved, download RapidEye scenes for your area of interest via the
+[Planet Explorer](https://www.planet.com/explorer/) or their Python SDK.
+
+### 2 — Ground-truth labels (USDA Cropland Data Layer)
+
+The pixel-level crop labels come from the **USDA NASS Cropland Data Layer (CDL) 2017**,
+a free, annually updated land-cover raster for the continental US at 30 m resolution.
+
+**How to get the CDL:**
+Download a clipped GeoTIFF for your area of interest from
+[USDA NASS CropScape](https://nassgeodata.gmu.edu/CropScape/) — select year 2017,
+draw or upload your bounding box, and export as GeoTIFF.
+
+**The 5 target classes used in this project** (top classes by pixel count after
+discarding the background class 255):
+
+| CDL Code | Crop |
+|----------|------|
 | 36 | Alfalfa |
 | 69 | Grapes |
 | 75 | Almonds |
 | 121 | Developed / Open Space |
 | 225 | Dbl Crop WinWht/Corn |
 
-**Download via Kaggle (recommended):**
+### 3 — File layout expected by the code
 
-```bash
-# Install the Kaggle CLI if you haven't already
-pip install kaggle
+Place the downloaded files in `Dataset/` with these exact names:
 
-# Download and unzip into the Dataset/ directory
-kaggle datasets download -d bhavesh907/crop-classificationcs2292017usgscroplanddata
-unzip crop-classificationcs2292017usgscroplanddata.zip -d Dataset/
+```
+Dataset/
+├── cdl2017.tiff
+├── 20170306.tiff
+├── 20170410.tiff
+├── 20170601.tiff
+├── 20170615.tiff
+├── 20170708.tiff
+├── 20170807.tiff
+├── 20170905.tiff
+├── 20170923.tiff
+├── 20171015.tiff
+└── 20171207.tiff
 ```
 
-You need a Kaggle account and your `~/.kaggle/kaggle.json` API token in place.  
-See the [Kaggle API docs](https://www.kaggle.com/docs/api) for setup instructions.
+Both the CDL raster and all satellite scenes must share the same spatial extent
+and coordinate reference system. Reproject / clip with `gdalwarp` if needed.
 
 ---
 
