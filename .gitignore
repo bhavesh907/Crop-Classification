@@ -1,0 +1,43 @@
+# Dataset (large binary files — download separately)
+Dataset/*.tiff
+Dataset/*.csv
+Dataset/*.zip
+Dataset/*.h5
+
+# Saved models and results
+models_saved/
+results/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Jupyter (archived notebooks)
+.ipynb_checkpoints/
+*.ipynb
+
+# Environments
+.env
+.venv/
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
