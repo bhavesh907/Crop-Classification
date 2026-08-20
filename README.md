@@ -1,6 +1,5 @@
 <div align="center">
 
-<img src="cover1.png" alt="Crop Classification" width="800"/>
 
 # 🌾 Crop Classification
 ### Multi-Temporal Satellite Imagery · Deep Learning · RapidEye · USDA CDL
@@ -12,6 +11,7 @@
 
 Classify crop types from sequences of satellite images using temporal deep learning.  
 Rather than a single snapshot, the model learns each crop's unique **growth curve across an entire season**.
+<img src="cover1.png" alt="Crop Classification" width="800"/>
 
 </div>
 
